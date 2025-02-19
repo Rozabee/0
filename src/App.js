@@ -4,9 +4,27 @@ import './index.css';
 
 function App() { 
 
-const showCats = true;
-const [attitude, setAttitude] = useState('bad');
-
+const showCats = true; 
+const [pet] = useState(
+  [{
+    name: 'Lucky',
+    color: 'Black',
+    img: '/imgs/lucky.jpg',
+    age: 5, 
+  },
+  {
+    name: 'Curry',
+    color: 'Yellow',
+    img: '/imgs/curry.jpg',
+    age: 5, 
+  },
+  {
+    name: 'Cheese',
+    color: 'Orange',
+    img: '/imgs/cheese.jpg',
+    age: 5, 
+  } ]
+);
 const [braincellCount, setBraincellCount] = useState(0);
 const cellCount = () => {
   setBraincellCount(braincellCount + 1);
@@ -19,44 +37,22 @@ return (
   <div className='cats'>
     { showCats ? (
       <>
-      <input  className='mt-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 px-2' type='text' placeholder='ouieeaaiouiai' onChange={(e) => {console.log(e.target.value); setAttitude(e.target.value)}}/>
+      {/* <input  className='mt-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 px-2' type='text' placeholder='ouieeaaiouiai' onChange={(e) => {console.log(e.target.value); setAttitude(e.target.value)}}/> */}
       <p className='text-pink-300 mt-4'>LIST OF MY CATS</p>
+
       <div className="flex flex-wrap justify-center bg-#1d1c1b p-4"> 
-    < Cats 
-      name = "Lucky" 
-      color = "Black" 
-      img = "\imgs\lucky.jpg"
-      age = {5}
-      role = {attitude}
-      />
-    < Cats
-      name = "Curry" 
-      color = "Yellow" 
-      img= "/imgs/curry.jpg"
-      age = {4}
-      role = {attitude}
-      />
-    < Cats
-      name = "Cheese" 
-      color = "Yellow" 
-      img = "/imgs/cheese.jpg"
-      age = {4.5}
-      role = {attitude}
-      />
-    < Cats
-      name = "Cheese" 
-      color = "Yellow" 
-      img = "/imgs/cheese.jpg"
-      age = {4.5}
-      role = {attitude}
-      />
-   
+        {pet.map((cat)=>{
+          console.log(cat);
+          return (<Cats  name = {cat.name} color = {cat.color} img = {cat.img} age = {cat.age} />
+);
+        })}
       </div>
       </>
        
-    )
-      : 
-      (<h3> No Cats</h3>)
+    ):  (
+    <h3> No Cats</h3>
+  )
+
     }
   </div> 
 
