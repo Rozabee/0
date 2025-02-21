@@ -16,13 +16,19 @@ const [pet] = useState(
     name: 'Curry',
     color: 'Yellow',
     img: '/imgs/curry.jpg',
-    age: 5, 
+    age: 3, 
   },
   {
     name: 'Cheese',
     color: 'Orange',
     img: '/imgs/cheese.jpg',
-    age: 5, 
+    age: 4, 
+  },
+  {
+    name: 'Heart',
+    color: 'Orange',
+    img: '/imgs/cheese.jpg',
+    age: 3.5, 
   } ]
 );
 const [braincellCount, setBraincellCount] = useState(0);
@@ -38,7 +44,7 @@ return (
     { showCats ? (
       <>
       {/* <input  className='mt-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 px-2' type='text' placeholder='ouieeaaiouiai' onChange={(e) => {console.log(e.target.value); setAttitude(e.target.value)}}/> */}
-      <p className='text-pink-300 mt-4'>LIST OF MY CATS</p>
+      <p className='text-purple-500 font-bold mt-4'>LIST OF MY CATS</p>
 
       <div className="flex flex-wrap justify-center bg-#1d1c1b p-4"> 
         {pet.map((cat)=>{
