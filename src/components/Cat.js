@@ -3,7 +3,7 @@ import EditCat from "./EditCat";
 function Cat(props) {
 //rule 
 return (
-    <div class="m-2 py-8 px-8 max-w-sm space-y-2 bg-#1d1c1b rounded-xl shadow-lg sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:gap-x-6">
+    <div class=" min-w-[350px] max-w-[350px] m-2 py-8 px-8 space-y-2 rounded-xl shadow-lg sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:gap-x-6">
 
     <img class="object-cover rounded-full h-[100px] w-[100px] shadow-lg block mx-auto sm:mx-0 sm:shrink-0" src={props.img} alt="cat" />
 
@@ -18,7 +18,7 @@ return (
        
         </div>
 
-        <EditCat/>
+        <EditCat name={props.name} age={props.age}/>
         
     </div>
     <hr/>
